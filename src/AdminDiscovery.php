@@ -12,17 +12,21 @@ class AdminDiscovery implements Discovery
 {
     use IsDiscovery;
 
-    public function __construct(private readonly AdminItems $adminItems) {
-
+    public function __construct(private readonly AdminItemList $adminItems)
+    {
     }
+
     public function discover(DiscoveryLocation $location, ClassReflector $class): void
     {
-        if($class->hasAttribute(AdminPanel::class)) {
-            $this->discoveryItems->add($location, $class->getName());
+        if ($class->hasAttribute(AdminPanel::class)) {
+            $this->discoveryItems->add($location, $class);
         }
     }
 
     public function apply(): void
     {
+        foreach ($this->discoveryItems as $class) {
+            $this->adminItems->add($class);
+        }
     }
 }

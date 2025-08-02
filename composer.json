@@ -1,12 +1,12 @@
 {
-    "name": "fluid-movement/tempest-admin-panel",
-    "description": "Admin Panel for Tempest framework",
-    "autoload": {
-        "psr-4": {
-            "FluidMovement\\TempestAdminPanel\\": "src/"
-        }
-    },
-    "require": {
-        "tempest/core": "*"
+  "name": "fluid-movement/tempest-admin-panel",
+  "description": "Admin Panel for Tempest framework",
+  "autoload": {
+    "psr-4": {
+      "FluidMovement\\TempestAdminPanel\\": "src/"
     }
+  },
+  "require": {
+    "tempest/core": "*"
+  }
 }
